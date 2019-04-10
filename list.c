@@ -33,7 +33,7 @@ void append(banji* B,student S)
 }
 
 void appendinf(banji* B,char* name,int age)
-{ 
+{  
 	student stu = (student)malloc(sizeof(struct students));
 	student p = B->head;
     while(p->next!=B->tail){p=p->next;}
@@ -43,6 +43,32 @@ void appendinf(banji* B,char* name,int age)
 	stu->next = B->tail;  
     B->len++;
 }
+
+void insertinf(banji* B,char* name,int age,int pos)
+{
+	int i=1;
+	if(pos>B->len || pos<1)
+  	{
+		printf("Pos is worng");
+		return;
+	}
+	student stu = (student)malloc(sizeof(struct students));
+	stu->name = name;                       
+	stu->age = age;
+	student p=B->head;
+	while(i<pos)
+	 {
+		p=p->next;
+		i++;
+	}
+
+	stu->next = p->next;
+	p->next = stu;
+	B->len++;
+}
+
+
+
 
 void showAll(banji* B)
 { 
@@ -67,6 +93,7 @@ int main()
 	void append(banji* B,student S);
     void InitList(banji* B); 
 	void appendinf(banji* B,char* name,int age);
+	void insertinf(banji* B,char* name,int age,int pos);
 	banji class1;
 	student stu1 = (student)malloc(sizeof(struct students));
 	stu1->name = "Mike";
@@ -76,6 +103,7 @@ int main()
     append(&class1,stu1);
 	appendinf(&class1,"Tom",21);
 	appendinf(&class1,"John",19);
+	insertinf(&class1,"Mary",18,2);
     showAll(&class1);	
 	return 0;
 }
