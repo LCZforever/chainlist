@@ -12,7 +12,7 @@ typedef struct banji{
 }banji;
 
 void InitList(banji* B)
-{  
+{   
 	student head,tail;
 	head = (student)malloc(sizeof(student));
 	tail = (student)malloc(sizeof(student));
@@ -33,18 +33,17 @@ void append(banji* B,student S)
 }
 
 void appendinf(banji* B,char* name,int age)
-{
+{ 
+	student stu = (student)malloc(sizeof(struct students));
 	student p = B->head;
-	student stu;
     while(p->next!=B->tail){p=p->next;}
-	stu = (student)malloc(sizeof(student));
 	stu->name = name;
 	stu->age = age;
     p->next = stu;
 	stu->next = B->tail;  
     B->len++;
 }
-   
+
 void showAll(banji* B)
 { 
 	student p = B->head->next;
@@ -55,7 +54,7 @@ void showAll(banji* B)
  	}
 	while(p!=B->tail)
 	{
-		printf("Name : %s  Age : %d\n",p->name,p->age);
+		printf("Name : %s Age : %d\n",p->name,p->age);
 		p=p->next;
 	}
 	printf("Lenth is : %d\n",B->len);
@@ -69,13 +68,14 @@ int main()
     void InitList(banji* B); 
 	void appendinf(banji* B,char* name,int age);
 	banji class1;
-	student stu1;
-    stu1 = (student)malloc(sizeof(student));
+	student stu1 = (student)malloc(sizeof(struct students));
 	stu1->name = "Mike";
 	stu1->age = 19;
+	stu1->next = NULL;
 	InitList(&class1);
     append(&class1,stu1);
 	appendinf(&class1,"Tom",21);
+	appendinf(&class1,"John",19);
     showAll(&class1);	
 	return 0;
 }
