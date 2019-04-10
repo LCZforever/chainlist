@@ -76,7 +76,7 @@ student pop(banji* B,int pos)
 	if(pos>B->len || pos<1)
   	{
 		printf("Pos is worng");
-		return;
+		return NULL;
 	}	
 	while(i<pos)
 	{
