@@ -47,15 +47,16 @@ void appendinf(banji* B,char* name,int age)
 void insertinf(banji* B,char* name,int age,int pos)
 {
 	int i=1;
+	student stu = (student)malloc(sizeof(struct students));
+	student p=B->head;
 	if(pos>B->len || pos<1)
   	{
 		printf("Pos is worng");
 		return;
-	}
-	student stu = (student)malloc(sizeof(struct students));
+	}	
 	stu->name = name;                       
 	stu->age = age;
-	student p=B->head;
+	
 	while(i<pos)
 	 {
 		p=p->next;
