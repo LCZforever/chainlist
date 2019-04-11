@@ -1,24 +1,17 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558 
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
-    "tasks": [
-        {
-            "type": "shell",
-            "label": "gcc",
-            "command": "D:\\Program Files\\MinGW\\bin\\gcc.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
-            ],
-            "options": {
-                "cwd": "D:\\Program Files\\MinGW\\bin"
-            },
-            "problemMatcher": [
-                "$gcc"
-            ]
-        }
-    ]
-}
+    "command": "gcc",
+    "args": ["-g","*.c","-o","${fileBasenameNoExtension}.exe"], // 编译命令参数
+    "problemMatcher": {
+    "owner": "cpp",
+    "fileLocation": ["relative", "${workspaceRoot}"],
+    "pattern": {
+    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+    "file": 1,
+    "line": 2,
+    "column": 3,
+    "severity": 4,
+    "message": 5
+    }
+    }
+ }

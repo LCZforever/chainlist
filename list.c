@@ -1,16 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<Windows.h>
-typedef struct students{
-	char *name;
-	int age;
-	struct students* next;
-}*student,*pos;
-
-typedef struct banji{
-	student head,tail;
-	int len;
-}banji;
+#include"list.h"
 
 void InitList(banji* B)
 {   
@@ -106,7 +96,7 @@ void showAll(banji* B)
 	printf("Lenth is : %d\n",B->len);
 }
 
-	
+	/*
 int main()
 { 
 	void showAll(banji* B);
@@ -135,3 +125,4 @@ int main()
 	system("pause");
 	return 0;
 }
+*/
