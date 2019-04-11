@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<Windows.h>
 typedef struct students{
 	char *name;
 	int age;
@@ -131,5 +132,6 @@ int main()
 
     showAll(&class1);	
 	printf("%s\n",stu2->name);
+	system("pause");
 	return 0;
 }
