@@ -18,6 +18,7 @@ void InitList(banji* B);
 void appendinf(banji* B,char* name,int age);
 void insertinf(banji* B,char* name,int age,int pos);
 student pop(banji* B,int pos);
+void overturn(banji *B);
 
 
 #endif

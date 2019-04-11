@@ -96,3 +96,14 @@ void showAll(banji* B)
 	printf("Lenth is : %d\n",B->len);
 }
 
+//单向链表反转
+//递归写法：反转剩下len-1的链表，把当前节点加到最后去
+//当剩一个时，直接返回
+void overturn(banji *B)
+{
+	student p;
+	if(B->len==1) return;
+	p = pop(B,1);
+	overturn(B);
+	append(B,p);
+}

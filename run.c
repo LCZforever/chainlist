@@ -19,10 +19,11 @@ int main()
 	appendinf(&class1,"Tom",21);
 	appendinf(&class1,"John",19);
 	insertinf(&class1,"Mary",18,2);
-    stu2 = pop(&class1,3);
 
+    showAll(&class1);
+	overturn(&class1);
     showAll(&class1);	
-	printf("%s\n",stu2->name);
+	
 	   
     end=getchar();
           
