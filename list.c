@@ -96,33 +96,3 @@ void showAll(banji* B)
 	printf("Lenth is : %d\n",B->len);
 }
 
-	/*
-int main()
-{ 
-	void showAll(banji* B);
-	void append(banji* B,student S);
-    void InitList(banji* B); 
-	void appendinf(banji* B,char* name,int age);
-	void insertinf(banji* B,char* name,int age,int pos);
-    student pop(banji* B,int pos);
-
-	banji class1;
-	student stu1 = (student)malloc(sizeof(struct students));
-	student stu2;
-	stu1->name = "Mike";
-	stu1->age = 19;
-	stu1->next = NULL;
-
-	InitList(&class1);
-    append(&class1,stu1);
-	appendinf(&class1,"Tom",21);
-	appendinf(&class1,"John",19);
-	insertinf(&class1,"Mary",18,2);
-    stu2 = pop(&class1,3);
-
-    showAll(&class1);	
-	printf("%s\n",stu2->name);
-	system("pause");
-	return 0;
-}
-*/
